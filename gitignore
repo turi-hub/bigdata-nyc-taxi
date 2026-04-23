@@ -1,0 +1,40 @@
+# Datos — nunca subir al repo
+*.parquet
+*.csv
+*.tsv
+data/raw/
+data/processed/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.env
+venv/
+env/
+.venv/
+
+# Modelos entrenados (pueden ser grandes)
+models/
+*.pkl
+*.joblib
+
+# Kafka y Zookeeper — archivos temporales
+kafka_2.12-3.7.0/logs/
+/tmp/kafka-logs/
+/tmp/zookeeper/
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# VSCodium / VS Code
+.vscode/
+*.code-workspace

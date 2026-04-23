@@ -1,0 +1,6 @@
+kafka-python
+pyspark==3.5.4
+pandas
+pyarrow
+matplotlib
+folium
