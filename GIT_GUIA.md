@@ -18,7 +18,7 @@ Git es un sistema que guarda el historial de cambios de todos los archivos del p
 ## Estructura del repositorio
 
 ```
-proyecto-bigdata/
+bigdata-nyc-taxi/
 ├── data/
 │   └── README_datos.md         # Instrucciones para descargar el dataset (los datos NO se suben)
 ├── notebooks/
@@ -58,26 +58,63 @@ Todo el trabajo diario va en `develop`.
 
 ## Configuración inicial — hacer esto una sola vez
 
-### 1. Clonar el repositorio
+### 1. Crear un Personal Access Token en GitHub
+
+Git no acepta tu contraseña normal de GitHub. Necesitas un token personal. Hazlo una sola vez:
+
+1. Entra en **github.com** con tu cuenta
+2. Click en tu foto de perfil → **Settings**
+3. Scroll hasta abajo → **Developer settings**
+4. **Personal access tokens** → **Tokens (classic)**
+5. **Generate new token (classic)**
+6. En **Note** pon: `bigdata-proyecto`
+7. En **Expiration** pon 90 days
+8. Marca la casilla **repo** (todo el bloque)
+9. Click en **Generate token**
+
+Copia el token que aparece — empieza por `ghp_`. **GitHub solo te lo muestra una vez**, guárdalo en un sitio seguro.
+
+---
+
+### 2. Clonar el repositorio
 
 ```bash
-git clone https://github.com/vuestro-usuario/proyecto-bigdata.git
-cd proyecto-bigdata
+git clone https://github.com/turi-hub/bigdata-nyc-taxi.git
+cd bigdata-nyc-taxi
 ```
 
-### 2. Cambiar a la rama develop
+Cuando te pida credenciales:
+- **Username:** tu usuario de GitHub
+- **Password:** el token que acabas de copiar (no tu contraseña normal)
+
+### 3. Guardar las credenciales para no volver a introducirlas
+
+```bash
+git config --global credential.helper store
+```
+
+Con esto Git recuerda el token y no vuelve a pedirlo.
+
+### 4. Configurar tu identidad
+
+```bash
+git config --global user.email "tu@email.com"
+git config --global user.name "tu-usuario-github"
+```
+
+### 5. Cambiar a la rama develop
 
 ```bash
 git checkout develop
 ```
 
-### 3. Verificar que estás en develop
+### 6. Verificar que estás en develop
 
 ```bash
 git branch
 ```
 
-Debe aparecer `* develop` con el asterisco delante. Si no, repite el paso 2.
+Debe aparecer `* develop` con el asterisco delante. Si no, repite el paso 5.
 
 ---
 
@@ -103,7 +140,7 @@ Trabaja con normalidad en VSCodium. Abre notebooks, edita código, ejecuta celda
 
 ### Al TERMINAR una sesión — siempre
 
-Cuando termines de trabajar, sube tus cambios en tres pasos:
+Cuando termines de trabajar, sube tus cambios en cuatro pasos:
 
 **Paso 1 — Ver qué archivos has modificado:**
 ```bash
