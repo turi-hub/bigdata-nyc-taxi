@@ -139,8 +139,8 @@ El dataset utilizado es el **NYC Taxi Trip Record Data** de la NYC Taxi & Limous
 Para el desarrollo se recomienda empezar con 1-2 meses de datos y escalar progresivamente.
 
 ```bash
-# Ejemplo: descargar enero 2023
-wget https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-01.parquet
+# Ejemplo: descargar enero 2009
+wget https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2009-01.parquet
 ```
 
 ---
