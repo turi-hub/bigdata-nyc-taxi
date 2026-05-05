@@ -45,3 +45,5 @@ Thumbs.db
 # VSCodium / VS Code
 .vscode/
 *.code-workspace
+kafka_2.12-3.7.0/
+*.tgz
