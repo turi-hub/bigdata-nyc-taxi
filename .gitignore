@@ -7,6 +7,10 @@ data/processed/
 # Excepción: dataset procesado para ML (pequeño, versionado)
 !data_ml/*.parquet
 
+# Dataset ML agregado — se puede compartir si el equipo decide versionarlo
+!data_ml/
+!data_ml/**
+
 # Jupyter
 .ipynb_checkpoints/
 *.ipynb_checkpoints
