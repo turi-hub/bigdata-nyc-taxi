@@ -4,6 +4,8 @@
 *.tsv
 data/raw/
 data/processed/
+# Excepción: dataset procesado para ML (pequeño, versionado)
+!data_ml/*.parquet
 
 # Jupyter
 .ipynb_checkpoints/
