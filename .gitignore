@@ -10,6 +10,8 @@ data/processed/
 # Dataset ML agregado — se puede compartir si el equipo decide versionarlo
 !data_ml/
 !data_ml/**
+!data_ml_v0/**
+!data_ml/
 
 # Jupyter
 .ipynb_checkpoints/
