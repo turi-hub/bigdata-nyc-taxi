@@ -28,7 +28,7 @@ HISTORY_PATH = "data_ml/df_ml"
 OUTPUT_PATH = "streaming_output"
 CHECKPOINT_DIR = "streaming_checkpoint"
 GRID_SIZE = 0.01
-WINDOW_SIZE = "30 minutes"
+WINDOW_SIZE = "15 minutes"
 WATERMARK = "2 hours"
 PROCESSING_TRIGGER = "10 seconds"
 DEFAULT_HISTORY_UNTIL = "2009-01-27 00:00:00"
@@ -102,7 +102,7 @@ def initialize_history(spark: SparkSession, history_path: str, history_until: st
 
 
 def lag_value(hist: dict, current_window, steps: int, fallback: float) -> float:
-    target_window = current_window - timedelta(minutes=30 * steps)
+    target_window = current_window - timedelta(minutes=15 * steps)
     return float(hist.get(target_window, fallback))
 
 
@@ -117,7 +117,6 @@ def add_model_features(rows, spark: SparkSession):
 
         lag_1 = lag_value(hist, current_window, 1, trip_count)
         lag_2 = lag_value(hist, current_window, 2, trip_count)
-        lag_48 = lag_value(hist, current_window, 48, trip_count)
 
         enriched_rows.append(
             {
@@ -133,7 +132,6 @@ def add_model_features(rows, spark: SparkSession):
                 "is_late_night": int(row["is_late_night"]),
                 "lag_1": lag_1,
                 "lag_2": lag_2,
-                "lag_48": lag_48,
             }
         )
 
@@ -141,7 +139,7 @@ def add_model_features(rows, spark: SparkSession):
         # history when Spark emits updated counts for the same open window.
         hist[current_window] = trip_count
 
-        if len(hist) > 120:
+        if len(hist) > 240:
             keep_keys = sorted(hist.keys())[-120:]
             history_by_zone[key] = {k: hist[k] for k in keep_keys}
 

@@ -3,7 +3,7 @@ Kafka producer for the NYC taxi streaming demo.
 
 It publishes clean individual test trips from ``data_stream/test_trips``. Each
 message is one pickup event. Spark Streaming is responsible for grouping these
-events into 30-minute demand windows.
+events into 15-minute demand windows.
 
 First prepare the source once:
     python producer/prepare_stream_test_data.py
