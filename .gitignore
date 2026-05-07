@@ -4,6 +4,7 @@
 *.tsv
 data/raw/
 data/processed/
+data_stream/
 # Excepción: dataset procesado para ML (pequeño, versionado)
 !data_ml/*.parquet
 
@@ -36,6 +37,8 @@ models/
 kafka_2.12-3.7.0/logs/
 /tmp/kafka-logs/
 /tmp/zookeeper/
+streaming_output/
+streaming_checkpoint/
 
 # Sistema
 .DS_Store
