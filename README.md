@@ -113,17 +113,22 @@ proyecto-bigdata/
 │   └── README_datos.md       # Instrucciones para descargar el dataset
 ├── notebooks/
 │   ├── 01_exploracion.ipynb  # EDA del dataset NYC Taxi
-│   ├── 02_modelo_batch.ipynb # Entrenamiento del modelo con SparkML
+│   ├── 022_modelo_batch.ipynb # Primeras pruebas sobre el entrenamiento y ML
+|   |── 02_modeloFinal.ipynb  #Modelado final y conclusiones ML del proyecto
 │   ├── 03_streaming.ipynb    # Pipeline Spark Streaming + Kafka
-│   └── 04_escalabilidad.ipynb# Experimentos de speed-up y size-up
+│   └── 04_visualizacion.ipynb #Generacion de HTML para mostrar resultados del modelado vs datos reales
 ├── producer/
 │   └── taxi_producer.py      # Script que simula el stream de viajes
+│   └── prepare_stream_test_data.py      # Script que carga los datos que se usan como test para simular
+├── streaming/
+│   └── taxi_consumer.py      # Consumer del flujo de streaming
 ├── docs/
-│   ├── memoria.pdf           # Documento escrito (10 páginas)
-│   └── diapositivas.pdf      # Presentación
+│   # Generacion de html y pngs extras durante el flujo 
 ├── test_kafka.py             # Script de verificación del stack
 ├── requirements.txt          # Dependencias Python
+├── nyc_taxi_visualizacion.html          # html final de visualizacion
 └── README.md                 # Este fichero
+
 ```
 
 ---
