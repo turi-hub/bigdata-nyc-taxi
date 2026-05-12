@@ -1,14 +1,4 @@
-"""
-Prepare clean individual test trips for the Kafka streaming demo.
 
-This script takes the noisy raw taxi parquet and applies the same core cleaning
-decisions used in the batch pipeline. The result is NOT aggregated: each row is
-one clean taxi pickup event. That is the right input for Kafka, because Spark
-Streaming should be the component that groups events into demand windows.
-
-Run from the repository root:
-    python producer/prepare_stream_test_data.py
-"""
 
 from __future__ import annotations
 
