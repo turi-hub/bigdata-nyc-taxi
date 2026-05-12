@@ -1,13 +1,4 @@
-"""
-Spark Structured Streaming consumer for the NYC taxi demand demo.
 
-The producer publishes one clean pickup event per message. This consumer groups
-those events by zone and 15-minute windows, builds the same feature columns used
-by ``models/best_demand_model`` and applies the model.
-
-Run from the repository root:
-    python streaming/taxi_consumer.py
-"""
 
 from __future__ import annotations
 
